@@ -11,9 +11,11 @@ float knapsack(int n,float weight[],float profit[],float M, float X[])
                 float temp=X[j];
                 X[j]=X[j+1];
                 X[j+1]=temp;
+
                 temp = weight[j];
                 weight[j] = weight[j + 1];
                 weight[j + 1] = temp;
+                
                 temp = profit[j];
                 profit[j] = profit[j + 1];
                 profit[j + 1] = temp;
