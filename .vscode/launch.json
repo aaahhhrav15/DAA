@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/aaravlodha/Documents/DAA Codes",
+      "program": "/Users/aaravlodha/Documents/DAA Codes/build/Debug/outDebug"
+    }
+  ]
+}
