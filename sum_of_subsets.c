@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-void findSubsets(int arr[], int n, int m, int index, int sum, int subset[], int subsetSize) {
+void findSubsets(int arr[], int n, int m, int index, int sum, int subset[], int subsetSize) 
+{
     if (sum == m) 
     {
         printf("Subset found: ");
