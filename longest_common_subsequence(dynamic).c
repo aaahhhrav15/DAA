@@ -1,13 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 
-// Function to find the maximum of two integers
 int max(int a, int b)
 {
     return (a > b) ? a : b;
 }
 
-// Function to find the length of the longest common subsequence
 int lcs_length(char X[], char Y[], int m, int n, char lcs[])
 {
     int L[m + 1][n + 1];
@@ -56,7 +54,7 @@ int lcs_length(char X[], char Y[], int m, int n, char lcs[])
 
 int main()
 {
-    char s1[100], s2[100], lcs[100]; // Define arrays to store strings and LCS
+    char s1[100], s2[100], lcs[100]; 
     printf("Enter String 1:\n");
     scanf("%s", s1);
     printf("Enter String 2:\n");
