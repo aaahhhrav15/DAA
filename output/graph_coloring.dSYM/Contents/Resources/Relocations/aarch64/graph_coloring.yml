@@ -1,0 +1,11 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/aaravlodha/Documents/DAA Codes/output/graph_coloring'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _graphColoring, symObjAddr: 0x0, symBinAddr: 0x100003C4C, symSize: 0x1E8 }
+  - { offsetInCU: 0x4D, offset: 0x4D, size: 0x8, addend: 0x0, symName: _graph, symBinAddr: 0x100008190, symSize: 0x0 }
+  - { offsetInCU: 0x7B, offset: 0x7B, size: 0x8, addend: 0x0, symName: _colors, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offsetInCU: 0x9C, offset: 0x9C, size: 0x8, addend: 0x0, symName: _numVertices, symBinAddr: 0x100011DD0, symSize: 0x0 }
+  - { offsetInCU: 0xA5, offset: 0xA5, size: 0x8, addend: 0x0, symName: _graphColoring, symObjAddr: 0x0, symBinAddr: 0x100003C4C, symSize: 0x1E8 }
+  - { offsetInCU: 0x12B, offset: 0x12B, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x1E8, symBinAddr: 0x100003E34, symSize: 0x10C }
+...
