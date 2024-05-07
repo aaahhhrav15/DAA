@@ -1,45 +1,70 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <stdbool.h>
+
+#define MAX_VERTICES 100
+
+int adjacency[MAX_VERTICES][MAX_VERTICES];
+int colors[MAX_VERTICES];
+int numVertices, numColors;
+
+bool promising_colouring(int v)
+{
+    for (int i = 0; i < v; i++)
+    {
+        if (adjacency[v][i] && colors[i] == colors[v])
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+void colouring(int v)
+{
+    if (v == numVertices)
+    {
+        printf("Vertex Colors: ");
+        for (int i = 0; i < numVertices; i++)
+        {
+            printf("%d ", colors[i]);
+        }
+        printf("\n");
+        return;
+    }
+
+    for (int c = 1; c <= numColors; c++)
+    {
+        colors[v] = c;
+        if (promising_colouring(v))
+        {
+            colouring(v + 1);
+        }
+        colors[v] = 0;
+    }
+}
 
 int main()
 {
-    int n;
-    printf("Enter the number of vertices of graph\n");
-    scanf("%d", &n);
-    int arr[n][n];
-    for(int i=0; i<n; i++)
+    printf("Enter the number of vertices: ");
+    scanf("%d", &numVertices);
+    printf("Enter the number of colors: ");
+    scanf("%d", &numColors);
+
+    printf("Enter the adjacency matrix (%d x %d):\n", numVertices, numVertices);
+    for (int i = 0; i < numVertices; i++)
     {
-        for(int j=0; j<n; j++)
+        for (int j = 0; j < numVertices; j++)
         {
-            printf("Enter 1 if vertex %d and %d are connected else 0 : ", i+1, j+1);
-            scanf("%d", &arr[i][j]);
+            scanf("%d", &adjacency[i][j]);
         }
     }
-    int color[n];
-    for(int i=0; i<n; i++)
+
+    for (int i = 0; i < numVertices; i++)
     {
-        color[i]=0;
+        colors[i] = 0;
     }
-    int m;
-    printf("Enter the number of colors\n");
-    scanf("%d", &m);
-    for(int i=0; i<n; i++)
-    {
-        for(int j=0; j<n; j++)
-        {
-            if(arr[i][j]==1 && color[j]!=0)
-            {
-                color[i]=color[j];
-            }
-        }
-        if(color[i]==0)
-        {
-            color[i]=1;
-        }
-    }
-    for(int i=0; i<n; i++)
-    {
-        printf("Color of vertex %d is %d\n", i+1, color[i]);
-    }
-    
+
+    colouring(0);
+
     return 0;
 }

@@ -1,0 +1,13 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/aaravlodha/Documents/DAA Codes/output/graph-coloring'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _promising_colouring, symObjAddr: 0x0, symBinAddr: 0x100003B5C, symSize: 0xCC }
+  - { offsetInCU: 0x4D, offset: 0x4D, size: 0x8, addend: 0x0, symName: _adjacency, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offsetInCU: 0x7B, offset: 0x7B, size: 0x8, addend: 0x0, symName: _colors, symBinAddr: 0x100011C40, symSize: 0x0 }
+  - { offsetInCU: 0x9C, offset: 0x9C, size: 0x8, addend: 0x0, symName: _numVertices, symBinAddr: 0x100011DD4, symSize: 0x0 }
+  - { offsetInCU: 0xB1, offset: 0xB1, size: 0x8, addend: 0x0, symName: _numColors, symBinAddr: 0x100011DD0, symSize: 0x0 }
+  - { offsetInCU: 0xBA, offset: 0xBA, size: 0x8, addend: 0x0, symName: _promising_colouring, symObjAddr: 0x0, symBinAddr: 0x100003B5C, symSize: 0xCC }
+  - { offsetInCU: 0xFE, offset: 0xFE, size: 0x8, addend: 0x0, symName: _colouring, symObjAddr: 0xCC, symBinAddr: 0x100003C28, symSize: 0x144 }
+  - { offsetInCU: 0x15A, offset: 0x15A, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x210, symBinAddr: 0x100003D6C, symSize: 0x1A0 }
+...
