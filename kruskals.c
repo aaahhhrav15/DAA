@@ -3,12 +3,13 @@
 
 int find(int parent[], int i)
 {
-    while (parent[i])
+    while (parent[i] != 0)
     {
         i = parent[i];
     }
     return i;
 }
+
 
 int uni(int parent[], int i, int j)
 {
@@ -22,7 +23,7 @@ int uni(int parent[], int i, int j)
 
 int main()
 {
-    int i, j, k, a, b, u, v, n, ne = 1;
+    int i, j, a, b, u, v, n, ne = 1;
     int cost[100][100];
     int min, mincost = 0;
     int parent[10] = {0};
@@ -36,15 +37,18 @@ int main()
         {
             scanf("%d", &cost[i][j]);
             if (cost[i][j] == 0)
+            {
                 cost[i][j] = 999;
+            }
         }
     }
 
     printf("The edges of Minimum Cost Spanning Tree are\n");
     while (ne < n)
     {
-        for (i = 1, min = 999; i <= n; i++)
+        for (i = 1; i <= n; i++)
         {
+            min = 999;
             for (j = 1; j <= n; j++)
             {
                 if (cost[i][j] < min)
@@ -59,7 +63,7 @@ int main()
         v = find(parent, v);
         if (uni(parent, u, v))
         {
-            printf("%d edge (%d,%d) =%d\n", ne++, a, b, min);
+            printf("%d edge (%d,%d) = %d\n", ne++, a, b, min);
             mincost += min;
         }
         cost[a][b] = cost[b][a] = 999;
