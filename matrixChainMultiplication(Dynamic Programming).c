@@ -6,14 +6,15 @@ int main()
     printf("Enter no. of matrices:\n");
     scanf("%d", &n);
 
-    printf("Enter %d order of dimension\n", n);
+    printf("Enter %d order of dimensions\n", n+1);
     int arr[n + 1];
     for (int i = 0; i <= n; i++)
     {
         scanf("%d", &arr[i]);
     }
 
-    int matrix[n][n];
+    int matrix[n][n];    
+
     int s[n][n];
 
     for (int i = 0; i < n; i++)
@@ -44,6 +45,6 @@ int main()
         }
     }
 
-    printf("%d", matrix[0][n - 1]);
+    printf("Least no. of multiplications required is%d", matrix[0][n - 1]);
     return 0;
 }

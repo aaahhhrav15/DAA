@@ -35,7 +35,7 @@ int main()
         if(start[j]>=end[i])
         {
             printf("Activity %d\n",j+1);
-            i=j;
+            i++;
         }
     }
 
