@@ -1,5 +1,10 @@
 #include<stdio.h>
 
+int max(int a,int b)
+{
+    return a>b?a:b;
+}
+
 int main()
 {
     int n,m;
@@ -27,7 +32,7 @@ int main()
             }
             else if(weight[i-1]<=j)
             {
-                dp[i][j]=profit[i-1]+dp[i-1][j-weight[i-1]]>dp[i-1][j]?profit[i-1]+dp[i-1][j-weight[i-1]]:dp[i-1][j];
+                dp[i][j]=max(profit[i-1]+dp[i-1][j-weight[i-1]],dp[i-1][j]);
             }
             else
             {
