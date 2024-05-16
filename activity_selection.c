@@ -28,14 +28,13 @@ int main()
         }
     }
     printf("Activities selected are\n");
-    printf("Activity 1\n");
-    int i=0;
-    for(int j=1;j<n;j++)
+    int finishTime=0;
+    for(int j=0;j<n;j++)
     {
-        if(start[j]>=end[i])
+        if(start[j]>=finishTime)
         {
-            printf("Activity %d\n",j+1);
-            i++;
+            printf("Activity %d with start time %d and end time %d\n",j+1,start[j],end[j]);
+            finishTime=end[j];
         }
     }
 
