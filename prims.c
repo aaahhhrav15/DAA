@@ -49,7 +49,7 @@ void prims(int n,int graph[n][n])
         mstSet[u] = true;
         for (int v = 0; v < n; v++)
         {
-            if (graph[u][v]==true && mstSet[v] == false && graph[u][v] < key[v])
+            if (graph[u][v] && mstSet[v] == false && graph[u][v] < key[v])
             {
                 parent[v] = u, key[v] = graph[u][v];
             }
