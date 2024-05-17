@@ -1,0 +1,8 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/aaravlodha/Documents/DAA Codes/output/bellman_ford(Dynamic Programming)'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _BellmanFord, symObjAddr: 0x0, symBinAddr: 0x100003AA8, symSize: 0x398 }
+  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _BellmanFord, symObjAddr: 0x0, symBinAddr: 0x100003AA8, symSize: 0x398 }
+  - { offsetInCU: 0x172, offset: 0x172, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x398, symBinAddr: 0x100003E40, symSize: 0x98 }
+...
