@@ -1,86 +1,55 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <limits.h>
 
-void dijkstra(int s, int n, int cost[n][n], int dist[n]) 
-{
-    int visited[n], count, min, next;
+#define INF INT_MAX
 
-    for (int i = 0; i < n; i++) 
+void Dijkstra(int graph[][3], int V, int E, int src) 
+{
+    int dis[V];
+    for (int i = 0; i < V; i++) 
     {
-        dist[i] = cost[s][i];
-        visited[i] = 0;
+        dis[i] = INF;
+    }
+    dis[src] = 0;
+
+    for (int i = 0; i < V; i++) 
+    {
+        for (int j = 0; j < E; j++) 
+        {
+            if (dis[graph[j][0]] != INF && dis[graph[j][0]] + graph[j][2] < dis[graph[j][1]] && graph[j][2] >= 0) 
+            {
+                dis[graph[j][1]] = dis[graph[j][0]] + graph[j][2];
+            }
+        }
     }
 
-    visited[s] = 1;
-    count = 1;
-
-    while (count < n) 
+    printf("Vertex Distance from Source\n");
+    for (int i = 0; i < V; i++) 
     {
-        min = INT_MAX;
-        next = -1;
-
-        for (int i = 0; i < n; i++) 
-        {
-            if (!visited[i] && dist[i] < min) 
-            {
-                min = dist[i];
-                next = i;
-            }
-        }
-
-        if (next == -1) break;
-
-        visited[next] = 1;
-        count++;
-
-        for (int i = 0; i < n; i++) 
-        {
-            if (!visited[i] && cost[next][i] != INT_MAX && dist[next] + cost[next][i] < dist[i]) 
-            {
-                dist[i] = dist[next] + cost[next][i];
-            }
-        }
+        printf("%d\t\t%d\n", i, dis[i]);
     }
 }
-
-int main() {
-    int n, s;
-    printf("Enter the number of vertices of the graph: ");
-    scanf("%d", &n);
-    int cost[n][n], dist[n];
-
-    for (int i = 0; i < n; i++) 
+int main()
+{
+    int V, E;
+    printf("Enter the number of vertices: ");
+    scanf("%d", &V);
+    printf("Enter the number of edges: ");
+    scanf("%d", &E);
+    
+    int graph[E][3];
+    printf("Enter source, destination, and weight for each edge:\n");
+    for(int i = 0; i < E; i++)
     {
-        for (int j = 0; j < n; j++) 
-        {
-            printf("Enter the weight between vertices %d and %d: ", i + 1, j + 1); 
-            scanf("%d", &cost[i][j]);
-            if (cost[i][j] == 0 && i != j) 
-            {
-                cost[i][j] = INT_MAX;
-            }
-        }
+        printf("Edge %d: ", i + 1);
+        scanf("%d %d %d", &graph[i][0], &graph[i][1], &graph[i][2]);
     }
 
+    int src;
     printf("Enter the source vertex: ");
-    scanf("%d", &s);
-    s--; 
+    scanf("%d", &src);
 
-    dijkstra(s, n, cost, dist);
-
-    printf("Shortest distances from source vertex %d:\n", s + 1); 
-    for (int i = 0; i < n; i++) 
-    {
-        if (dist[i] == INT_MAX) 
-        {
-            printf("Vertex %d: Unreachable\n", i + 1); 
-        } 
-        else 
-        {
-            printf("Vertex %d: %d\n", i + 1, dist[i]); 
-        }
-    }
+    Dijkstra(graph, V, E, src);
 
     return 0;
 }
