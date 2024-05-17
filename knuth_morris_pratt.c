@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<string.h>
 
 int main()
 {
@@ -7,15 +8,8 @@ int main()
     scanf("%s",text);
     printf("Enter the pattern\n");
     scanf("%s",pattern);
-    int n=0,m=0;
-    for(int i=0;text[i]!='\0';i++)
-    {
-        n++;
-    }
-    for(int i=0;pattern[i]!='\0';i++)
-    {
-        m++;
-    }
+    int n=strlen(text);
+    int m=strlen(pattern);
     int lps[m];
     lps[0]=0;
     int len=0;

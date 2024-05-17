@@ -33,7 +33,6 @@ int lcs_length(char X[], char Y[], int m, int n, char lcs[])
     i = m;
     j = n;
     int index = L[m][n];
-    lcs[index] = '\0';
     while (i > 0 && j > 0)
     {
         if (X[i - 1] == Y[j - 1])
